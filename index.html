@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+
+      body, html {
+          height: 100%;
+          margin: 0;
+      }
+      .bgimg {
+          background: url("img/art-black-background-blur-1040499.jpg");
+          height: 100%;
+          background-position: center;
+          background-size: cover;
+          position: relative;
+          color: #fff;
+          font-family: 'Courier New', Courier, monospace;
+          font-size: 25px;
+      }
+      .topleft {
+          position: absolute;
+          top: 0;
+          left: 17px;
+      }
+      .bottomleft {
+          position: absolute;
+          bottom: 0;
+          left: 17px;
+      }
+      .middle {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+      }
+      hr {
+          margin: auto;
+          width: 40%;
+      }
+      h1 {
+          color: #fff;
+          font-family: 'Special Elite', cursive;
+          font-size: 64px;
+          letter-spacing: 10px;
+          animation: text-flicker 3s linear infinite;
+      }
+
+      @keyframes text-flicker {
+          0% {
+              opacity: 0.1;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          2% {
+              opacity: 1;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          8% {
+              opacity: 0.1;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          9% {
+              opacity: 1;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          12% {
+              opacity: 0.1;
+              text-shadow: 0px 0px px rgba(242, 22, 22, 1);
+          }
+          20% {
+              opacity: 1;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          25% {
+              opacity: 0.3;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          30% {
+              opacity: 1;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          70% {
+              opacity: 0.7;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          72% {
+              opacity: 0.2;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          77% {
+              opacity: .9;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+          100% {
+              opacity: .9;
+              text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+          }
+      }
+    </style>
+    <title>Coming Soon</title>
+</head>
+<body>
+    <div class="bgimg">
+        <div class="topleft">
+            <p>Logo</p>
+        </div>
+        <div id="text" class="middle">
+            <h1>COMING SOON</h1>
+            <hr>
+            <p id="demo" style="font-size: 30px;"></p>
+        </div>
+        <div class="bottomleft">
+            <p>Some kind of text.</p>
+        </div>
+    </div>
+
+    <script>
+    var countDownDate = new Date ("Jul 13, 2020 12:13:23").getTime();
+
+    var countdownfunction = setInterval(function() {
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 *24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(countdownfunction);
+            document.getElementById("demo").innerHTML = "Should Be Up";
+        }
+    }, 1000);
+    </script>
+</body>
+</html>
